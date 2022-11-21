@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <header class="header visible" data-menu>
+      <div class="header__container container">
+        <a href="./index.html" class="logo">SHOP FOR GAMERS</a>
+
+        <button type="button" class="menu-btn menu-btn--open">
+          <svg class="menu-open-icon" data-menu-open width="54" height="36">
+            <use href="./images/icons.svg#icon-menu-outline"></use>
+          </svg>
+        </button>
+        <button type="button" class="menu-btn menu-btn--close">
+          <svg class="menu-open-icon" data-menu-close width="36" height="36">
+            <use href="./images/icons.svg#icon-cross"></use>
+          </svg>
+        </button>
+
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="" class="navigation__link">Accessories</a>
+            </li>
+            <li class="navigation__item">
+              <a href="" class="navigation__link">Contact</a>
+            </li>
+            <li class="navigation__item">
+              <a href="" class="navigation__link">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="" class="shop-link">Shop now</a>
+      </div>
+
+      <div class="modal-menu">
+        <ul class="modal-menu__list mobile-menu">
+          <li class="modal-menu__item">
+            <a href="" class="modal-menu__link">accessories</a>
+          </li>
+          <li class="modal-menu__item">
+            <a href="" class="modal-menu__link">contact</a>
+          </li>
+          <li class="modal-menu__item">
+            <a href="" class="modal-menu__link">blog</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <script src="./js/menu-modal.js"></script>
+  </body>
+</html>

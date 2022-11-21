@@ -1,0 +1,7 @@
+.logo {
+  display: inline-block;
+  width: 116px;
+  @include font(700);
+  text-align: center;
+  color: getColor("PrimaryTitleColor");
+}

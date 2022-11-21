@@ -1,0 +1,166 @@
+.header {
+  position: relative;
+  width: 100%;
+  max-height: 104px;
+  overflow: hidden;
+  background: #01383a;
+
+  box-shadow: 0px 4px 10px rgba(97, 162, 58, 0.2),
+    0px 4px 50px rgba(94, 236, 54, 0.5), 0px 4px 4px rgba(17, 168, 26, 0.2);
+  &.visible {
+    overflow: visible;
+    transition: transform 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @include tablet {
+    max-height: 136px;
+  }
+}
+
+.header__container {
+  @include flex-position(space-between, center);
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include tablet {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.menu-btn--close {
+  display: none;
+
+  .header.visible & {
+    display: inline-flex;
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.menu-btn--open {
+  .header.visible & {
+    display: none;
+  }
+}
+
+.shop-link {
+  display: none;
+
+  @include tablet {
+    display: inline-block;
+    padding: 9px 18px;
+    background-color: getColor("SecondaryTitleColor");
+    border-radius: 16px;
+    @include font(700, 14px, 22px);
+    letter-spacing: -0.03em;
+    color: getColor("TextBlackColor");
+    cursor: pointer;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0px 8px 20px rgba(134, 229, 67, 0.5),
+        0px 4px 10px rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @include desktop {
+    width: 104px;
+    padding: 16px 20px;
+    line-height: 1;
+  }
+}
+
+.navigation {
+  display: none;
+
+  @include desktop {
+    display: flex;
+  }
+}
+.navigation__list {
+  display: flex;
+  gap: 48px;
+}
+
+.navigation__link {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  @include font(400, 16px, 16px);
+  color: getColor("PrimaryTitleColor");
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid getColor("SecondaryTitleColor");
+  }
+}
+
+.modal-menu {
+  position: absolute;
+
+  left: 0;
+  z-index: -1;
+  top: 104px;
+  width: 100vw;
+  height: 100vh;
+
+  transform: translateX(-100%);
+  .header.visible & {
+    transform: translateX(0);
+  }
+
+  background-color: black;
+  background-image: url("../images/menu-bcg-phone.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include retina {
+    background-image: url("../images/menu-bcg-phone-2x.jpg");
+  }
+
+  @include tablet {
+    top: 136px;
+    background-image: url("../images/menu-bcg-tab.jpg");
+
+    @include retina {
+      background-image: url("../images/menu-bcg-tab-2x.jpg");
+    }
+  }
+  @include desktop {
+    display: none;
+  }
+}
+
+.modal-menu__list {
+  @include flex-position(null, center);
+  gap: 40px;
+  flex-direction: column;
+  padding-top: 64px;
+
+  @include tablet {
+    padding-top: 120px;
+  }
+}
+.modal-menu__link {
+  @include font(700);
+  text-align: center;
+  text-transform: uppercase;
+  color: getColor("PrimaryTitleColor");
+
+  @include tablet {
+    @include font(700, 32px, 38px);
+  }
+}
